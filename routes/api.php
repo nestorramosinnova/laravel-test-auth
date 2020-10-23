@@ -18,5 +18,8 @@ Route::group([
     ], function() {
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
+        Route::post('user', 'AuthController@store');
     });
 });
+
+Route::post('test', 'AuthController@test');
