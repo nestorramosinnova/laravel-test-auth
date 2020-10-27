@@ -90,6 +90,10 @@ class AuthController extends Controller
     }
 
     public function test(Request $request){
-        return response()->json($request);
+        $consumer_key = "ttrtyrrwewee3r3";
+        if(isset($request->oauth_consumer_key) &&$request->oauth_consumer_key===$consumer_key ){
+           return response()->json($request);           
+        }
+        return false;
     }
 }
